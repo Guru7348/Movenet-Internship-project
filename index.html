@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pose Detection</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            width: 100%;
+        }
+
+        #header {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+            width: 100%;
+            font-size: larger;
+            background-color: cornflowerblue;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: auto;
+            height: auto;
+            /* justify-content: center; */
+            /* align-content: center; */
+            align-items: center;
+            margin: 15px;
+            padding: 25px;
+            border: 1px solid grey;
+            border-radius: 15px;
+        }
+
+        h3 {
+            margin: 15px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="header">Next-Generation Pose Detection with MoveNet and TensorFlow.js</div>
+    <form>
+        <h3>Add Image/Video</h3>
+        <input type="file" accept="image/*" id='file' required />
+        <input type="submit" id="btn" />
+    </form>
+</body>
+<!-- Require the peer dependencies of pose-detection. -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+
+<!-- You must explicitly require a TF.js backend if you're not using the TF.js union bundle. -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+<!-- Alternatively you can use the WASM backend: <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+<script src="app.js"></script>
+<!-- <script>
+    const input = document.getElementById('file')
+const btn = document.getElementById("btn")
+btn.addEventListener("submit",submit)
+
+function submit(e){
+    e.preventDefault()
+    console.log(input.files[0])
+}
+</script> -->
+
+</html>
