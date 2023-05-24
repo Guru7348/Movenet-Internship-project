@@ -8,6 +8,7 @@ async function submit(e) {
     e.preventDefault()
     // console.log(input.files[0].type.slice(0,5))
     if (input.files[0].type.slice(0, 5) == "image") {
+        alert("Please Wait Processing")
         const url = URL.createObjectURL(input.files[0])
         const img = new Image();
         img.src = url;
